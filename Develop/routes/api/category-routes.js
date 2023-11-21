@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     });
     
     if (!categoryData) {
-      res.status(404).jsoin({ message: 'No category found with this id!' });
+      res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
 
@@ -76,17 +76,19 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
+    const categoryId = req.params.id;
+
     const categoryData = await Category.destroy({
       where: {
-        id: req.params.id
+        id: categoryId
       }
     });
 
-    if (!categoryData) {
-      req.status(400).json({ message: 'No category found with this id! '});
+    if (categoryData === 0) {
+      return req.status(403).json({ message: `No category found with this id: ${categoryId}`});
     }
 
-    res.status(200).json(categoryData);
+    res.status(200).json({message: 'Category deleted successfully'});
   } catch (err) {
     res.status(500).json(err);
   }
