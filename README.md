@@ -20,24 +20,62 @@ A back end e-commcerce site using Express.js API and Sequalize to interact with 
 ## Installation
 
 ```Bash
+git clone https://github.com/colbyrobins/ecommerce-backend-ORM.git -b main
+
+cd ecommerce-backend-ORM
+
+npm install
+```
+
+## Usage
+
+Create database in MySQL
+
+```Bash
+
+cd ecommerce-backend-ORM/Develop
+
+mysql -u root -p root
+
+source db/schema.sql
+
+exit
 
 ```
 
+Seed database
 
-## Usage
+```Bash
+npm run seed
+
+```
+
+Start server
+
+```Bash
+npm start
+
+```
+
+Open browser or Insomnia and create http request.
+
+Examples:
+
+- http://localhost:3001/api/tags
+- http://localhost:3001/api/products
+- http://localhost:3001/api/categories/1
 
 
 
 ## License
 
-This project is covered under the None license.
+N/A
 
 ## Contribution Guidelines
-
-
+N/A
 
 ## Test Instructions
-
+N/A
 
 
 ## Questions?
