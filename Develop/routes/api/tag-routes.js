@@ -91,12 +91,12 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (tagData === 0) {
-      return req.status(403).json({ message: `No tag found with this id: ${tagId}`});
+      return req.status(404).json({ message: `No tag found with this id: ${tagId}`});
     }
 
     res.status(200).json({message: 'Tag deleted successfully'})
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({error: 'Server side error'});
   }
 });
 

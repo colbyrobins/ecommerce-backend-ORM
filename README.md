@@ -28,7 +28,6 @@ npm install
 ```
 
 ## Usage
-
 Create database in MySQL
 
 ```Bash
@@ -65,7 +64,7 @@ Examples:
 - http://localhost:3001/api/products
 - http://localhost:3001/api/categories/1
 
-
+A video tutorial can be found here: https://drive.google.com/file/d/1As6RQM-BhjcNwl8_qtuzBJyqE6HcWy7M/view
 
 ## License
 
